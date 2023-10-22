@@ -40,7 +40,8 @@ pipeline{
 
             steps{
                script{          
-                   mvnIntegrationTest()
+                  def SonarQubecredentialsId = 'sonar-api'
+                   statiCodeAnalysis(SonarQubecredentialsId)
                }
             }
         }
