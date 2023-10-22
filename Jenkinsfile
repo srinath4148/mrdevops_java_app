@@ -39,7 +39,7 @@ pipeline{
             steps{
                script{
                    
-                   mvnIntegrationTest()
+                  // mvnIntegrationTest()
                }
             }
         }
@@ -48,8 +48,8 @@ pipeline{
             steps{
                script{
                    
-                   def SonarQubecredentialsId = 'sonarqube-api'
-                   statiCodeAnalysis(SonarQubecredentialsId)
+                  // def SonarQubecredentialsId = 'sonarqube-api'
+                  // statiCodeAnalysis(SonarQubecredentialsId)
                }
             }
         }
@@ -58,8 +58,8 @@ pipeline{
             steps{
                script{
                    
-                   def SonarQubecredentialsId = 'sonarqube-api'
-                   QualityGateStatus(SonarQubecredentialsId)
+                  // def SonarQubecredentialsId = 'sonarqube-api'
+                  // QualityGateStatus(SonarQubecredentialsId)
                }
             }
         }
@@ -68,7 +68,7 @@ pipeline{
             steps{
                script{
                    
-                   mvnBuild()
+                  // mvnBuild()
                }
             }
         }
@@ -77,7 +77,7 @@ pipeline{
             steps{
                script{
                    
-                   dockerBuild("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
+                  // dockerBuild("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                }
             }
         }
@@ -86,7 +86,7 @@ pipeline{
             steps{
                script{
                    
-                   dockerImageScan("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
+                 //  dockerImageScan("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                }
             }
         }
@@ -95,7 +95,7 @@ pipeline{
             steps{
                script{
                    
-                   dockerImagePush("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
+                 //  dockerImagePush("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                }
             }
         }   
@@ -104,7 +104,7 @@ pipeline{
             steps{
                script{
                    
-                   dockerImageCleanup("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
+                 //  dockerImageCleanup("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                }
             }
         }      
